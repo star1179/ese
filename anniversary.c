@@ -1,5 +1,7 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <time.h>
+#include <string.h>
 #include "anniversary.h"
 
 void anni_select()
@@ -12,34 +14,39 @@ void anni_select()
 
 
  scanf("%d",&choice);
- while(1){
+ fflush(stdin);
+// while(1){
   switch(choice)
   {
-   case 1: input(); break;
-   case 2: show(); break;
-   default : printf("1 or 2 is available\n") break;
+   case 1: anni_input(); break;
+   case 2: anni_show(); break;
+   default : printf("1 or 2 is available\n"); break;
   }
- }
+// }
 
 }
 
 void anni_input()
 {
- char date[];
- char event[];
- printf("input the date and event [20181225]\n");
- gets(date);
- getchar();
- print("input the event [meet the santa]\n");
- gets(event);
+ char date[30];
+ char event[30];
+ printf("input the date[20181225] event[meet the santa]\n");
 
- FILE * fd=fopen("anni.txt","a");
- fputs(date);
- fputs(" ");
- fputs(event);
+ scanf("%s",date);
+ fgets(event, sizeof(event), stdin);
+
+ //date[strlen(date)-1] = '\n';
+ getchar();
+ //event[strlen(event)-1] = '\n';
+ fflush(stdin);
+
+ printf("d:%s e: %s\n", date, event);
+ FILE * fp=fopen("anni.txt","a");
+ fprintf(fp,"Date : %s", date);
+ fprintf(fp,"event : %s\n", event);
 
  fclose(fp);
-}
+} 
 
 void anni_show()
 {}

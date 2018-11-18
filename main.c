@@ -1,8 +1,8 @@
 #include <stdio.h>
-#include "show.h"
+#include "anniversary.h"
 
 int main()
 {
-	showMenu();
+	anni_select();
 	return 0;
 }
