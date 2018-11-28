@@ -28,6 +28,7 @@ void anni_select()
    if(quit != 1)
     break;
   }
+ }
 }
 
 void anni_input()

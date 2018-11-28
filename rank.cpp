@@ -35,7 +35,6 @@ void show_searchRank()
 
     }
 
-    return 0;
 
 }
 
