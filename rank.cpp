@@ -23,7 +23,7 @@ void show_searchRank()
     while(s!=end_of_file)
     {
         getline(in, s);
-        if(!s.find(goal_start))    
+        if(!s.find(goal_start)) 
         {
             s.erase(0,goal_start.length());
             s.erase(s.length()-goal_end.length(), s.length());
@@ -38,3 +38,7 @@ void show_searchRank()
 
 }
 
+int main()
+{
+ show_searchRank();
+}
