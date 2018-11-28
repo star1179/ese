@@ -1,11 +1,10 @@
-main : main.o anniversary.o rank.o
-	gcc -o main main.o anniversary.o
-main.o : main.c
-	gcc main.c -o main.o -g -c -I./include/
-anniversary.o : anniversary.c
-	gcc -c -g anniversary.c -I./include/
-
+myapp_dj : myapp_dj.o schedule.o rank.o
+	gcc -o myapp_dj main.o anniversary.o
+myapp_dj.o : myapp_dj.c
+	gcc myapp_dj.c -o myapp_dj.o -g -c -I./include/
+schedule.o : schedule.c
+	gcc -c -g schedule.c -I./include/
 rank.o : rank.cpp
 	g++ -c rank.cpp
 clean :
-	rm -f anniversary.o main main.o rank rank.o
+	rm -f schedule.o myapp_dj myapp_dj.o rank rank.o
