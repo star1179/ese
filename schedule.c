@@ -3,35 +3,29 @@
 #include <time.h>
 #include <string.h>
 #include <errno.h>
-#include "anniversary.h"
+#include "./include/schedule.h"
 
-void anni_select()
+void sche_select()
 {
  int choice;
 
- printf("Anniversary Menu!!\n");
- printf("1.Input the anniversary\n");
- printf("2.Print the anniverary\n");
-
+ printf("Schedule Management  Menu!!\n");
+ printf("1.Input the Schedule\n");
+ printf("2.Print the Schedule\n");
+ printf("3.Print the Schedule\n");
 
  scanf("%d",&choice);
  fflush(stdin);
- int quit=0; //for termination
- while(1){
-  switch(choice)
+
+ switch(choice)
   {
-   case 1: anni_input(); break;
-   case 2: anni_show(); break;
+   case 1: sche_input(); break;
+   case 2: sche_show(); break;
    default : printf("1 or 2 is available\n"); break;
-   printf("Do you want to Continue? 1:yes other:no\n");
-   scanf("%d",&quit);
-   if(quit != 1)
-    break;
   }
- }
 }
 
-void anni_input()
+void sche_input()
 {
  char date[30];
  char event[30];
@@ -41,11 +35,10 @@ void anni_input()
  getchar();
  fgets(event, sizeof(event), stdin);
 
- getchar();
  fflush(stdin);
 
  printf("d:%s e: %s\n", date, event);
- FILE * fp=fopen("anni.txt","a");
+ FILE * fp=fopen("sche.txt","a");
  if( fp == NULL)
  {
   perror("open");
@@ -57,9 +50,9 @@ void anni_input()
  fclose(fp);
 }
 
-void anni_show()
+void sche_show()
 {
- FILE * fp = fopen("anni.txt","r");
+ FILE * fp = fopen("sche.txt","r");
  if( fp == NULL)
  {
   perror("open");
@@ -67,9 +60,18 @@ void anni_show()
  }
  char strTemp[255];
  char *pStr;
+ int idx = 0;
   while ( !feof(fp) )
   {
    pStr = fgets(strTemp, sizeof(strTemp),fp);
-   printf("%s",strTemp);
+   printf("%d. %s",idx++, strTemp);
   }
+}
+
+void sche_del()
+int main()
+{
+ while(1){
+  sche_select();
+ }
 }
