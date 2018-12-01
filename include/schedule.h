@@ -1,7 +1,7 @@
 #ifndef ANNIVERSARY_H
 #define ANNIVERSARY_H
-void anni_select();
-void anni_input();
-void anni_show();
-
+void sche_select();
+void sche_input();
+void sche_show();
+void sche_delete();
 #endif
