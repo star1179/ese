@@ -86,3 +86,40 @@ void todolist_show()
       temp = temp->next;
    }
 }
+
+void insertToSLL(int where, int what)
+{
+   struct node *wp = head;
+   while (1)
+   {
+      if (wp == 0)
+      {
+         break;
+      }
+      if (wp->data == where)
+      {
+         break;
+      }
+      wp = wp->next;
+   }
+   {
+      struct node *cur;
+      cur = (struct node *)malloc(sizeof(struct node));
+      cur->data = what;
+      cur->next = 0;
+
+      if (wp == 0)
+      {
+         cur->next = head;
+         head = cur;
+         return;
+      }
+      else
+      {
+         cur->next = wp->next;
+         wp->next = cur;
+         return;
+       }
+   }
+}
+
