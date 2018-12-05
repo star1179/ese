@@ -51,26 +51,44 @@ void todolist_select()
 
 void todolist_make(char n)
 {
-        struct node *new_one = (struct node *)malloc(sizeof(struct node));
-        new_one->i = n;
-        new_one->next = 0;
+   struct node *new_one = (struct node *)malloc(sizeof(struct node));
+   new_one->i = n;
+   new_one->next = 0;
 
-        if (head == 0)
-        {
-                head = new_one;
-                return;
-        }
+   if (head == 0)
+   {
+       head = new_one;
+       return;
+   }
+   struct node *temp = head;
+   while (1)
+   {
+      if (temp->next == 0)
+      {
+          temp->next = new_one;
+          return;
+      }
+      temp = temp->next;
+   }
 
-        struct node *temp = head;
-        while (1)
-        {
-                if (temp->next == 0)
-                {
-                        temp->next = new_one;
-                        return;
-                }
-                temp = temp->next;
-        }
+   char todo[100];
+   printf("please write on your todo : "); 
+   scanf("%s",todo);
+   fgets(todo,sizeof(todo_,stdin);
+   fflush(stdin);
+
+   printf("%s",todo); //for the check
+   FILE *fp=fopen("todo.txt","a");
+
+   if(fp==NULL) 
+   {
+      perror("open error");
+      exit(0);
+   }
+   fprintf(fp,"%s",todo);
+   fclose(fp);
+
+
 }
 
 void todolist_show()
@@ -122,4 +140,5 @@ void insertToSLL(int where, int what)
        }
    }
 }
+
 
