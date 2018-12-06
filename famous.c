@@ -19,7 +19,7 @@ int get_random_number(void)
 
 void print_saying(int n)
 {
-        char *buffer[20] = { "No pain No gain",
+     char* saying[20] = { "No pain No gain",
                              "Good words cost nothing",
                              "Deep sorrow has no tongue",
                              "A cold head and a warm heart",
@@ -29,9 +29,18 @@ void print_saying(int n)
                              "waste not fresh tears over old griefs",
                              "Secret of success is constancy to purpose",
                              "Necessity is the mother of invention",
-                             "At the height of laughter the " }
+                             "Courage is very important.Like a muscle, it is strengthened by use. ",
+                             "Life is the art for drawing sufficient conclusions from insufficient premises. ",
+                             "By doubting we come at the truth",
+                             "A man that hath no virtue in himself, ever envieth virtue in others ",
+                             "When money speaks, the truth keeps silent.",
+                             "We give advice, but we cannot give conduct ",
+                             "Nature never deceives us; it is always we who deceive ourselves ",
+                             "Forgiveness is better than revenge ",
+                             "Pain past is pleasure ",
+                             "Think like a man of action and act like man of thought." };
 
-   puts(buffer[n]);
+   puts(saying[n]);
 }
 
 
