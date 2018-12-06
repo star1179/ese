@@ -1,9 +1,25 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 #include "famous.h"
 
-void Todayfamoussaying()
+void main(void)
 {
-        char *buffer[40] = { "No pain No gain",
+   int get_random_number(void);
+   void print_saying(int);
+   print_saying(get_random_number());
+}
+
+int get_random_number(void)
+{
+   srand(time(NULL));
+   return radn() % 19 + 1;
+}
+
+
+void print_saying(int n)
+{
+        char *buffer[20] = { "No pain No gain",
                              "Good words cost nothing",
                              "Deep sorrow has no tongue",
                              "A cold head and a warm heart",
@@ -15,10 +31,7 @@ void Todayfamoussaying()
                              "Necessity is the mother of invention",
                              "At the height of laughter the " }
 
-        //buffer check
-        for (int i = 0; i < 20; i++)
-        {
-                printf("%s \n",buffer[i]);
-        }
+   puts(buffer[n]);
 }
+
 
