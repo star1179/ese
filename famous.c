@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "famous.h"
+#include "./include/famous.h"
 
-void main(void)
+void show_famous(void)
 {
    int get_random_number(void);
    void print_saying(int);

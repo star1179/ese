@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include "./include/lotto.h"
 
-
-void lotto()
+void show_lotto()
 {
    int i, j, a;
    int num = 1;

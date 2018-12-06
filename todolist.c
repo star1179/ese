@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <errono.h>
-#include "Todolist.h"
+#include <errno.h>
+#include "./include/todolist.h"
 
 struct node
 {
@@ -13,7 +13,7 @@ struct node
 struct node *head = 0;
 
 
-void todolist_select()
+void select_Todo()
 {
    int pick=0;
    while(1)
@@ -25,7 +25,7 @@ void todolist_select()
       printf("----------------------------------------------\n");
       printf("selection : ");
       scanf("%d", &pick);
-      fflush(stdin);
+      getchar();
       if(pick==1)
       {
         show_Todo();
@@ -39,11 +39,12 @@ void todolist_select()
    }
 }
 
-void addToSLL(int priority,char * str)
+void addToSLL(char *str)
 {
+
    struct node *new_one = (struct node *)malloc(sizeof(struct node));
-   new_one->i = n;
-   new_one->todo = str;
+   new_one->todo = (char*)malloc(strlen(str)+1);
+   strcmp(new_one->todo , str);
    new_one->next = 0;
 
    if (head == 0)
@@ -52,36 +53,22 @@ void addToSLL(int priority,char * str)
        return;
    }
    struct node *temp = head;
-   while (1)
+   while (temp->next!=0)
    {
-      if (temp->next == 0)
-      {
-          temp->next = new_one;
-          return;
-      }
       temp = temp->next;
    }
+   temp->next = new_one;
 }
 
 void show_Todo()
 {
    int priority;
    char *todo;
+   char buf[255];
    struct node *temp = head;
    FILE *fp=fopen("todo.txt","r");
-   while (fscanf(fp,"%d %s",priority,todo)!=EOF)
-   {
-      addToSLL(priority,todo);
-   }
-   while(1)
-   {
-      if (temp == 0)
-      {
-          return;
-      }
-      printf("priority : %d || todo:  %s\n", temp->i,temp->todo);
-      temp = temp->next;
-   }
+   while (fgets(buf,256,fp) !=NULL)printf("%s \n",buf);
+   fclose(fp);
 }
 
 
@@ -102,4 +89,9 @@ void make_Todo()
    }
    fprintf(fp,"%s",todo);
    fclose(fp);
+}
+
+int main(void)
+{
+   select_Todo();
 }
