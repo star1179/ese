@@ -49,7 +49,7 @@ void todolist_select()
    }
 }
 
-void todolist_make(char n)
+void addToSLL(char n)
 {
    struct node *new_one = (struct node *)malloc(sizeof(struct node));
    new_one->i = n;
@@ -70,28 +70,9 @@ void todolist_make(char n)
       }
       temp = temp->next;
    }
-
-   char todo[100];
-   printf("please write on your todo : "); 
-   scanf("%s",todo);
-   fgets(todo,sizeof(todo_,stdin);
-   fflush(stdin);
-
-   printf("%s",todo); //for the check
-   FILE *fp=fopen("todo.txt","a");
-
-   if(fp==NULL) 
-   {
-      perror("open error");
-      exit(0);
-   }
-   fprintf(fp,"%s",todo);
-   fclose(fp);
-
-
 }
 
-void todolist_show()
+void showSLL()
 {
    struct node *temp = head;
    while (1)
@@ -141,4 +122,75 @@ void insertToSLL(int where, int what)
    }
 }
 
+void delFromSLL(int _data)
+{
+   struct node *cur = head;
+   while(1)
+   {
+      if(cur==0)
+      {
+         break;
+      }
+      if(cur->data == _data)
+      {
+         break;
+      }
+      cur = cur->next;
+   }
+   if(cur==0)
+   {
+      return 0;
+   }
+   if(cur==head)
+   {
+      head = head->next;
+      free(cur);
+      return;
+   }
+   else
+   {
+      struct node *prev=head;
+      while(prev->next != cur)
+      {
+         prev = prev->next;
+      }
+      prev->next = cur->next;
+      free(cur);
+      return;
+   }
+}
 
+void destroySLL()
+{
+   struct node *cur = head;
+   while(1)
+   {
+      if(cur==0)
+      {
+         return;
+      }
+      head = head->next;
+      free(cur);
+      cur=head;
+   }
+}
+
+void makeTodo()
+{
+   char todo[100];
+   printf("please write on your todo : "); 
+   scanf("%s",todo);
+   fgets(todo,sizeof(todo_,stdin);
+   fflush(stdin);
+
+   printf("%s",todo); //for the check
+   FILE *fp=fopen("todo.txt","a");
+
+   if(fp==NULL) 
+   {
+      perror("open error");
+      exit(0);
+   }
+   fprintf(fp,"%s",todo);
+   fclose(fp);
+}
