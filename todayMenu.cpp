@@ -10,7 +10,6 @@ void show_todayMenu()
     ifstream in("cafe.txt");
 
     string s="";
-//    string goal_start="<div class=\"sickdangmenu cf\">";
     string goal_start="<div class=\"year_0502_box\">";
     string goal_end="</dlv>";
     string end_of_file="</body></html>";
@@ -37,7 +36,7 @@ void show_todayMenu()
       cout <<"3 coner: "<<s << endl;
       break;
       case 843:
-      s=s.substr(33,200);
+      s=s.substr(33,190);
       cout <<"4 coner: "<<s << endl;
       break;
      }
