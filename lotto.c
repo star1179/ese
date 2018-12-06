@@ -3,7 +3,7 @@
 #include <time.h>
 
 
-int main(void)
+void lotto()
 {
    int i, j, a;
    int num = 1;
