@@ -13,7 +13,7 @@ void show_famous(void)
 int get_random_number(void)
 {
    srand(time(NULL));
-   return radn() % 19 + 1;
+   return rand() % 19 + 1;
 }
 
 
