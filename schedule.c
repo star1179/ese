@@ -6,7 +6,6 @@
 void sche_select()
 {
  int choice;
-
  printf("\nSchedule Management  Menu!!\n");
  printf("1.Input the Schedule\n");
  printf("2.Print the Schedule\n");
@@ -20,8 +19,8 @@ void sche_select()
   {
    case 1: sche_input(); break;
    case 2: sche_show(); break;
-   case 3: ex_flag = 1; break;
-   default : printf("1 or 2 is available\n"); break;
+   case 3: return; break;
+   default : printf("1 or 2 or 3 is available\n"); break;
   }
 }
 
