@@ -1,17 +1,24 @@
 AR=ar
 CC=gcc
 LIB=libfuncs.a
-EXEC=myDaily
+EXEC=main
 CFLAGS=-Wall
 OBJS= todolist.o schedule.o rank.o famous.o lotto.o todayMenu.o sendList.o
 
 all: $(LIB) $(EXEC)
+
 $(LIB): $(OBJS)
 	$(AR) rv $@ $(OBJS)
 $(EXEC): main.o $(LIB)
-	$(CC) -o myDaily main.o -L. lfuncs
+	$(CC) -o $(EXEC) main.o -L. -lfuncs
 %.o: %.c
-	$(CC) -c $(CFLAGS) $< -o $@ -I ./include/
+	$(CC) -c $(CFLAGS) $< -o $@
+rank.o: rank.cpp
+	g++ -o rank.o rank.cpp
+todayMenu.o: todayMenu.cpp
+	g++ -o todayMenu.o todayMenu.cpp
+sendList.o: sendList.cpp
+	g++ -o sendList.o sendList.cpp
 clean:
 	rm -f $(OBJS) $(LIB) $(EXEC)
 

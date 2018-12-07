@@ -1,4 +1,4 @@
 #ifndef LOTTO_H
 #define LOTTO_H
-void lotto();
+void show_lotto();
 #endif

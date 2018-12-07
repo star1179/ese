@@ -4,13 +4,6 @@
 #include <errno.h>
 #include "./include/todolist.h"
 
-struct node
-{
-  int i;
-  char *todo;
-  struct node *next;
-};
-struct node *head = 0;
 
 
 void select_Todo()
