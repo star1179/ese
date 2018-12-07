@@ -3,10 +3,12 @@
 #include <string>
 #include <cstring>
 #include <fstream>
+#include <stdlib.h>
 
 using namespace std;
 void show_todayMenu()
 {
+    system("rm cafe.txt");
     system("python3 getHTML.py");
     ifstream in("cafe.txt");
 

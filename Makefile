@@ -1,5 +1,5 @@
 
-myDaily : main.o todolist.o schedule.o rank.o famous.o lotto.o todayMenu.o
+myDaily : main.o todolist.o schedule.o rank.o famous.o lotto.o todayMenu.o sendList.o
 	gcc -o myDaily main.o todolist.o schedule.o rank.o famous.o lotto.o todayMenu.o
 main.o : main.c
 	gcc main.c -o main.o -g -c -I./include/
@@ -15,5 +15,7 @@ lotto.o : lotto.c
 	gcc lotto.c -o lotto.o -g -c -I./include/
 todayMenu.o : todayMenu.cpp
 	g++ -c todayMenu.cpp -o todayMenu.o
+sendList.o : sendList.cpp
+	g++ -c sendList.cpp -o sendList.o
 clean :
 	rm -f MyDaily main.o todolist.o schedule.o rank.o famous.o lotto.o todayMenu.o
