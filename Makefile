@@ -1,8 +1,10 @@
 
 myDaily : main.o todolist.o schedule.o rank.o famous.o lotto.o todayMenu.o sendList.o
 	gcc -o myDaily main.o todolist.o schedule.o rank.o famous.o lotto.o todayMenu.o
+libfuncs.a : main.o todolist.o schedule.o rank.o famous.o lotto.o todayMenu.o sendList.o
+	ar rv $@ main.o todolist.o schedule.o rank.o famous.o lotto.o todayMenu.o sendList.o
 main.o : main.c
-	gcc main.c -o main.o -g -c -I./include/
+	gcc main.c -o main.o -g -c -L. -lfuncs -I./include/
 todolist.o : todolist.c
 	gcc todolist.c -o todolist.o -g -c -I./include/
 schedule.o : schedule.c
