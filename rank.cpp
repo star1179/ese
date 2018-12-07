@@ -7,7 +7,7 @@
 using namespace std;
 void show_searchRank()
 {
-
+    system("python3 getHTML.py");
     ifstream in("naver.txt");
 
     string s="";
@@ -69,8 +69,22 @@ void show_news()
     }
 
 }
-int main()
+
+void select_rank()
 {
- show_searchRank();
- show_news();
+ int ch;
+ printf("1.Show naver search\n2.Show news topic");
+ scanf("%d",&ch);
+ getchar();
+ switch(ch)
+ {
+  case 1:
+   show_searchRank();
+   break;
+  case 2:
+   show_news();
+   break;
+  default :
+   printf("Wrong number");
+   break;
 }

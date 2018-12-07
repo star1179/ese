@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include "./include/sendList.h"
 using namespace std;
 
 void send_list()
@@ -51,6 +52,7 @@ void send_list()
  {
   fout << tail[i] << endl;
  }
+ system("firefox 192.168.226.128/index.html");
 }
 int main()
 {

@@ -7,6 +7,7 @@
 using namespace std;
 void show_todayMenu()
 {
+    system("python3 getHTML.py");
     ifstream in("cafe.txt");
 
     string s="";

@@ -1,10 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
 #include <string.h>
 #include <errno.h>
 #include "./include/schedule.h"
-int ex_flag = 0;
 void sche_select()
 {
  int choice;
@@ -65,11 +63,3 @@ void sche_show()
 }
 
 
-int main()
-{
- while(1){
-  sche_select();
-  if(ex_flag ==1)
-   break;
- }
-}
