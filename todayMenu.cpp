@@ -4,12 +4,12 @@
 #include <cstring>
 #include <fstream>
 #include <stdlib.h>
+using namespace std;
 
-extern "C"
-{
+extern "C"{
 void show_todayMenu()
 {
-    system("rm cafe.txt");
+    //system("rm cafe.txt");
     system("python3 getHTML.py");
     ifstream in("cafe.txt");
 
@@ -18,7 +18,6 @@ void show_todayMenu()
     string goal_end="</dlv>";
     string end_of_file="</body></html>";
 
-    string * menu = new string[5];
     int count=1;
 
     cout<<"Today Cafeteria Menu!"<<endl;
@@ -49,5 +48,6 @@ void show_todayMenu()
      break;
     }
 }
+
 
 }

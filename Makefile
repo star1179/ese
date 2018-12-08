@@ -3,24 +3,27 @@ CC=gcc
 LIB=libfuncs.a
 EXEC=main
 CFLAGS=-Wall
-OBJS= todolist.o schedule.o rank.o famous.o lotto.o todayMenu.o sendList.o
+OBJS= todolist.o schedule.o rank.o famous.o lotto.o todayMenu.o sendList.o showmenu.o
 
 all: $(LIB) $(EXEC)
 
 $(LIB): $(OBJS)
 	$(AR) rv $@ $(OBJS)
 $(EXEC): main.o $(LIB)
-	$(CC) -o $(EXEC) main.o -L. -lfuncs
+	$(CC) -o $(EXEC) main.o -L. -lfuncs -lstdc++
 %.o: %.c
 	$(CC) -c $(CFLAGS) $< -o $@
-rank.o: rank.cpp
-	g++ -o rank.o rank.cpp
-todayMenu.o: todayMenu.cpp
-	g++ -o todayMenu.o todayMenu.cpp
-sendList.o: sendList.cpp
-	g++ -o sendList.o sendList.cpp
+%.o: %.cpp
+	g++ -c $(CFLAGS) $< -o $@
 clean:
 	rm -f $(OBJS) $(LIB) $(EXEC)
+
+#rank.o: rank.cpp
+#	g++ -o rank.o rank.cpp
+#todayMenu.o: todayMenu.cpp
+#	g++ -o todayMenu.o todayMenu.cpp
+#sendList.o: sendList.cpp
+#	g++ -o sendList.o sendList.cpp
 
 #myDaily : main.o todolist.o schedule.o rank.o famous.o lotto.o todayMenu.o sendList.o
 #	gcc -o myDaily main.o todolist.o schedule.o rank.o famous.o lotto.o todayMenu.o

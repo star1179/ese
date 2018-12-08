@@ -1,5 +1,10 @@
-#ifndef SENDLIST_H
-#define SENDLIST_H
-using namespace std;
-void send_list();
+//#ifndef SENDLIST_H
+//#define SENDLIST_H
+#ifdef __cplusplus
+extern "C" {
 #endif
+void send_list();
+#ifdef __cplusplus
+}
+#endif
+//#endif

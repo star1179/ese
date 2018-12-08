@@ -4,8 +4,8 @@
 #include <stdlib.h>
 #include "./include/sendList.h"
 
-extern "C"
-{
+using namespace std;
+extern "C"{
 void send_list()
 {
  ofstream fout;
@@ -58,3 +58,4 @@ void send_list()
  system("firefox 192.168.226.128/index.html");
 }
 }
+

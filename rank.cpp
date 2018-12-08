@@ -1,12 +1,12 @@
 #include "./include/rank.h"
+#include <stdio.h>
 #include <iostream>
 #include <string>
 #include <cstring>
 #include <fstream>
 #include <stdlib.h>
-
-extern "C"
-{
+using namespace std;
+extern "C"{
 void show_searchRank()
 {
     system("python3 getHTML.py");
@@ -91,4 +91,5 @@ void select_rank()
    break;
  }
 }
+
 }

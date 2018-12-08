@@ -60,7 +60,3 @@ void make_Todo()
    fclose(fp);
 }
 
-int main(void)
-{
-   select_Todo();
-}
