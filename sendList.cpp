@@ -3,8 +3,9 @@
 #include <fstream>
 #include <stdlib.h>
 #include "./include/sendList.h"
-using namespace std;
 
+extern "C"
+{
 void send_list()
 {
  ofstream fout;
@@ -55,4 +56,5 @@ void send_list()
  }
  system("cp index.html /var/www/html/");
  system("firefox 192.168.226.128/index.html");
+}
 }

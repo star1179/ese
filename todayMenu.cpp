@@ -5,7 +5,8 @@
 #include <fstream>
 #include <stdlib.h>
 
-using namespace std;
+extern "C"
+{
 void show_todayMenu()
 {
     system("rm cafe.txt");
@@ -49,8 +50,4 @@ void show_todayMenu()
     }
 }
 
-
-int main()
-{
- show_todayMenu();
 }

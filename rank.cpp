@@ -5,7 +5,8 @@
 #include <fstream>
 #include <stdlib.h>
 
-using namespace std;
+extern "C"
+{
 void show_searchRank()
 {
     system("python3 getHTML.py");
@@ -88,4 +89,5 @@ void select_rank()
   default :
    printf("Wrong number");
    break;
+}
 }
