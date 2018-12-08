@@ -1,22 +1,26 @@
 #include <stdio.h>
-#include "./include/famous.h"
-#include "./include/lotto.h"
-#include "./include/rank.h"
-#include "./include/schedule.h"
-#include "./include/todayMenu.h"
-#include "./include/todolist.h"
-#include "./include/sendlist.h"
+#include "/include/famous.h"
+#include "/include/lotto.h"
+#include "/include/rank.h"
+#include "/include/schedule.h"
+#include "/include/todayMenu.h"
+#include "/include/todolist.h"
+#include "/include/sendList.h"
+#include "./include/showMenu.h"
 
-void showmenu()
+void show_menu()
 {
-   int showmenu = 0;
+   int ch = 0;
+   int exit = 0;
+   while(1){
    printf("My Daily  (made by DJ & MH\n)");
    printf("Please press button\n\n");
    printf("1.Today Menu\n2.Today Rank(Search Rank & News Topic\n3.Today my schedule\n4.Today my todolist\n5.Today Famous saying\n6.Today Lotton/7.look on the WEB");
+   printf("press any key for terminate\n");
    printf("selection : ");
-   scanf("%d", &showmenu);
+   scanf("%d", &ch);
 
-   switch(showmenu)
+   switch(ch)
    {
       case 1: show_todayMenu(); break;
       case 2: select_rank(); break;
@@ -25,7 +29,10 @@ void showmenu()
       case 5: show_famous(); break;
       case 6: show_lotto(); break;
       case 7: send_list(); break;
-      default : printf("press any key for terminate\n"); break;
+      default : exit = 1; break;
    }
+   if (exit == 1)
+    break;
+ }
 }
 

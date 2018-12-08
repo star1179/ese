@@ -1,4 +1,4 @@
-#include "include/rank.h"
+#include "./include/rank.h"
 #include <iostream>
 #include <string>
 #include <cstring>
@@ -89,5 +89,6 @@ void select_rank()
   default :
    printf("Wrong number");
    break;
+ }
 }
 }

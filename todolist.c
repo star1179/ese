@@ -4,13 +4,6 @@
 #include <errno.h>
 #include "./include/todolist.h"
 
-struct node
-{
-  int i;
-  char *todo;
-  struct node *next;
-};
-struct node *head = 0;
 
 
 void select_Todo()
@@ -39,33 +32,9 @@ void select_Todo()
    }
 }
 
-void addToSLL(char *str)
-{
-
-   struct node *new_one = (struct node *)malloc(sizeof(struct node));
-   new_one->todo = (char*)malloc(strlen(str)+1);
-   strcmp(new_one->todo , str);
-   new_one->next = 0;
-
-   if (head == 0)
-   {
-       head = new_one;
-       return;
-   }
-   struct node *temp = head;
-   while (temp->next!=0)
-   {
-      temp = temp->next;
-   }
-   temp->next = new_one;
-}
-
 void show_Todo()
 {
-   int priority;
-   char *todo;
    char buf[255];
-   struct node *temp = head;
    FILE *fp=fopen("todo.txt","r");
    while (fgets(buf,256,fp) !=NULL)printf("%s \n",buf);
    fclose(fp);
