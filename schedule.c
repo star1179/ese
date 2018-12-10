@@ -34,7 +34,6 @@ void sche_input()
  fgets(event, sizeof(event), stdin);
  fflush(stdin);
 
- printf("d:%s e:%s", date, event);
  FILE * fp=fopen("sche.txt","a");
  if( fp == NULL)
  {
@@ -56,8 +55,7 @@ void sche_show()
  }
  char buf[255];
  printf("Schdule list\n");
- int i =0;
- while(fgets(buf,256,fp) != NULL) printf("%d. %s",i++,buf);
+ while(fgets(buf,256,fp) != NULL) printf("- %s",buf);
  fclose(fp);
 }
 
