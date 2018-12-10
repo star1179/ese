@@ -37,7 +37,7 @@ void select_Todo()
 void show_Todo()
 {
    char buf[255];
-   FILE *fp=fopen("todo.txt","r");
+   FILE *fp=fopen("./txt/todo.txt","r");
    while (fgets(buf,256,fp) !=NULL)printf("%s \n",buf);
    fclose(fp);
 }
@@ -51,7 +51,7 @@ void make_Todo()
    fflush(stdin);
 
    printf("%s",todo); //for the check
-   FILE *fp=fopen("todo.txt","a");
+   FILE *fp=fopen("./txt/todo.txt","a");
 
    if(fp==NULL)
    {

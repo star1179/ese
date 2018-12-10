@@ -13,9 +13,9 @@ void send_list()
  ifstream fin2;
 
  string line;
- fout.open("index.html");
- fin.open("sche.txt");
- fin2.open("todo.txt");
+ fout.open("./web/index.html");
+ fin.open("./txt/sche.txt");
+ fin2.open("./txt/todo.txt");
  string head[6] = {"<!DOCTYPE html>", "<html>", "<head>", "<title>MY DAILY by dj & mh</title>", "</head>", "<body>"};
  string tail[2] = {"</body>", "</html>"};
 
@@ -54,8 +54,8 @@ void send_list()
  {
   fout << tail[i] << endl;
  }
- system("sudo cp index.html /var/www/html/");
- system("firefox 192.168.226.128/index.html");
+ system("sudo cp ./web/index.html /var/www/html/");
+ system("firefox 192.168.226.130/index.html");
 }
 }
 

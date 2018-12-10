@@ -38,7 +38,7 @@ void sche_input()
  fgets(event, sizeof(event), stdin);
  fflush(stdin);
 
- FILE * fp=fopen("sche.txt","a");
+ FILE * fp=fopen("./txt/sche.txt","a");
  if( fp == NULL)
  {
   perror("open");
@@ -51,7 +51,7 @@ void sche_input()
 
 void sche_show()
 {
- FILE * fp = fopen("sche.txt","rt+");
+ FILE * fp = fopen("./txt/sche.txt","rt+");
  if( fp == NULL)
  {
   perror("open");

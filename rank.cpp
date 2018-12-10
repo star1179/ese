@@ -10,7 +10,7 @@ extern "C"{
 void show_searchRank()
 {
     system("python3 getHTML.py");
-    ifstream in("naver.txt");
+    ifstream in("./txt/naver.txt");
 
     string s="";
     string goal_start="<span class=\"ah_k\">";
@@ -41,7 +41,7 @@ void show_searchRank()
 
 void show_news()
 {
-    ifstream in("naver.txt");
+    ifstream in("./txt/naver.txt");
 
     string s="";
     string goal_start="<li class=\"ca_item\">";
@@ -64,7 +64,7 @@ void show_news()
             rank[count] = rank[count].substr(162,170);
             cout<<count<<rank[count]<<endl;
             count++;
-            if(count == 11)
+            if(count == 10)
              break;
 
         }
@@ -75,7 +75,8 @@ void show_news()
 void select_rank()
 {
  int ch;
- printf("1.Show naver search\n2.Show news topic");
+ printf("1.Show naver search\n2.Show news topic\n");
+ printf(">> ");
  scanf("%d",&ch);
  getchar();
  switch(ch)
