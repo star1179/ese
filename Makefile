@@ -1,9 +1,9 @@
 AR=ar
 CC=gcc
 LIB=libfuncs.a
-EXEC=main
+EXEC=myDaily
 CFLAGS=-Wall
-OBJS= todolist.o schedule.o rank.o famous.o lotto.o todayMenu.o sendList.o showmenu.o
+OBJS= todolist.o schedule.o rank.o famous.o lotto.o todayMenu.o sendList.o showmenu.o main.o
 
 all: $(LIB) $(EXEC)
 
