@@ -12,23 +12,25 @@ void select_Todo()
    while(1)
    {
       printf("----------------------------------------------\n");
-      printf("1. show Todolist\n");
-      printf("2. Make Todolist\n");
-      printf("press any key button for terminate\n");
+      printf("1. Make Todolist\n");
+      printf("2. Show Todolist\n");
+      printf("3. Terminate\n");
       printf("----------------------------------------------\n");
       printf("selection : ");
       scanf("%d", &pick);
       getchar();
       if(pick==1)
       {
-        show_Todo();
+        make_Todo();
       }
       else if(pick==2)
       {
-        make_Todo();
+        show_Todo();
       }
-      else
+      else if(pick ==3)
+      {
         break;
+      }
    }
 }
 

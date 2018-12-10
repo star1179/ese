@@ -39,8 +39,9 @@ void print_saying(int n)
                              "Forgiveness is better than revenge ",
                              "Pain past is pleasure ",
                              "Think like a man of action and act like man of thought." };
-
+   printf("\n Today famous saying...\n");
    puts(saying[n]);
+   printf("\n\n\n");
 }
 
 
