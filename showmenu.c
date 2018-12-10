@@ -13,9 +13,9 @@ void show_menu()
    int ch = 0;
    int exit = 0;
    while(1){
-   printf("My Daily  (made by DJ & MH\n)");
+   printf("My Daily (made by DJ & MH)\n");
    printf("Please press button\n\n");
-   printf("1.Today Menu\n2.Today Rank(Search Rank & News Topic\n3.Today my schedule\n4.Today my todolist\n5.Today Famous saying\n6.Today Lotto/n7.look on the WEB");
+   printf("1.Today Menu\n2.Today Rank(Search Rank & News Topic\n3.Today my schedule\n4.Today my todolist\n5.Today Famous saying\n6.Today Lotto\n7.look on the WEB");
    printf("press any key for terminate\n");
    printf("selection : ");
    scanf("%d", &ch);
