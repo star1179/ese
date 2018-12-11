@@ -1,12 +1,12 @@
 #include <stdio.h>
-#include "./include/famous.h"
-#include "./include/lotto.h"
-#include "./include/rank.h"
-#include "./include/schedule.h"
-#include "./include/todayMenu.h"
-#include "./include/todolist.h"
-#include "./include/sendList.h"
-#include "./include/showMenu.h"
+#include "../include/famous.h"
+#include "../include/lotto.h"
+#include "../include/rank.h"
+#include "../include/schedule.h"
+#include "../include/todayMenu.h"
+#include "../include/todolist.h"
+#include "../include/sendList.h"
+#include "../include/showMenu.h"
 
 void show_menu()
 {

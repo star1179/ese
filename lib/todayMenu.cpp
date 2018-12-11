@@ -1,4 +1,4 @@
-#include "./include/todayMenu.h"
+#include "../include/todayMenu.h"
 #include <iostream>
 #include <string>
 #include <cstring>
@@ -11,7 +11,7 @@ void show_todayMenu()
 {
    // system("rm cafe.txt");
    // system("python3 getHTML.py");
-    ifstream in("./txt/cafe.txt");
+    ifstream in("../txt/cafe.txt");
     string s = "";
     int count=1;
     cout<<"Today Cafeteria Menu!"<<endl;

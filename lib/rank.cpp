@@ -1,4 +1,4 @@
-#include "./include/rank.h"
+#include "../include/rank.h"
 #include <stdio.h>
 #include <iostream>
 #include <string>
@@ -9,8 +9,8 @@ using namespace std;
 extern "C"{
 void show_searchRank()
 {
-    system("python3 getHTML.py");
-    ifstream in("./txt/naver.txt");
+    system("python3 ../getHTML.py");
+    ifstream in("../txt/naver.txt");
 
     string s="";
     string goal_start="<span class=\"ah_k\">";
@@ -41,7 +41,7 @@ void show_searchRank()
 
 void show_news()
 {
-    ifstream in("./txt/naver.txt");
+    ifstream in("../txt/naver.txt");
 
     string s="";
     string goal_start="<li class=\"ca_item\">";

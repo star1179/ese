@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "./include/lotto.h"
+#include "../include/lotto.h"
 
 void show_lotto()
 {

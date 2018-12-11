@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "./include/famous.h"
+#include "../include/famous.h"
 
 void show_famous(void)
 {
